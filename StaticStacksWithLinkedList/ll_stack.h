@@ -1,9 +1,11 @@
 #pragma once
 
-typedef struct{
+struct n{
 	int data;
 	node* next;
-}node;
+};
+
+typedef struct n node;
 
 
 node* initStack(int data);
