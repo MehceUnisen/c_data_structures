@@ -1,0 +1,13 @@
+Hey, there!
+This "C" code implements binary search tree from a begginers perspective.
+
+There is three different functions to do basic operations on bst's.
+You can add new child's to the root node that you've created.
+
+You can find any node you want, also the code will tell you which side to go
+in order to find the desired child.
+ 
+Also, don't worry! The code is completely "segmentation-fault"-free. :)
+
+
+
