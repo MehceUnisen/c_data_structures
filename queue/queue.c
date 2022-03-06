@@ -77,26 +77,26 @@ void dequeue(queue_identifier *q_identity)
     if (q_identity->q_type == INT)
     {
 
-        int *del = ((int *)q_identity->queue_head + (--q_identity->last_index - 1));
+        int *del = ((int *)q_identity->queue_head + (--q_identity->last_index));
         q_identity->queue_head = (int *)q_identity->queue_head + 1;
         free((void *)del);
     }
 
     else if (q_identity->q_type == FLOAT)
     {
-        float *del = ((float *)q_identity->queue_head + (--q_identity->last_index - 1));
+        float *del = ((float *)q_identity->queue_head + (--q_identity->last_index));
         q_identity->queue_head = (float *)q_identity->queue_head + 1;
         free((void *)del);
     }
     else if (q_identity->q_type == DOUBLE)
     {
-        double *del = ((double *)q_identity->queue_head + (--q_identity->last_index - 1));
+        double *del = ((double *)q_identity->queue_head + (--q_identity->last_index));
         q_identity->queue_head = (double *)q_identity->queue_head + 1;
         free((void *)del);
     }
     else
     {
-        char *del = ((char *)q_identity->queue_head + (--q_identity->last_index - 1));
+        char *del = ((char *)q_identity->queue_head + (--q_identity->last_index));
         q_identity->queue_head = (char *)q_identity->queue_head + 1;
         free((void *)del);
     }
