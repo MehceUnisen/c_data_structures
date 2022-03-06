@@ -1,6 +1,6 @@
 #include "queue.h"
 
-queue_identifier *init_queue(queue_type q_type, void *head_data)
+queue_identifier *init_queue(queue_type q_type)
 {
     queue_identifier *new_q = (queue_identifier *)malloc(sizeof(queue_identifier));
     new_q->queue_id = ++q_id;
