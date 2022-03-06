@@ -24,6 +24,6 @@ typedef struct
 int q_id;
 
 queue_identifier *init_queue(queue_type q_type);
-void enqueue(queue_identifier *q_identity, int data);
+void enqueue(queue_identifier *q_identity, void *data);
 void dequeue(queue_identifier *q_identity);
 void print_queue(queue_identifier *q_identity);

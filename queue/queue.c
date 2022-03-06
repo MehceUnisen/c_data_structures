@@ -32,7 +32,7 @@ queue_identifier *init_queue(queue_type q_type)
     return new_q;
 }
 
-void enqueue(queue_identifier *q_identity, int data)
+void enqueue(queue_identifier *q_identity, void *data)
 {
     if (q_identity->q_type == FLOAT)
     {
@@ -41,7 +41,7 @@ void enqueue(queue_identifier *q_identity, int data)
             q_identity->queue_head = realloc(q_identity->queue_head, ++q_identity->queue_size * sizeof(float));
         }
 
-        ((float *)q_identity->queue_head)[q_identity->last_index++] = data;
+        ((float *)q_identity->queue_head)[q_identity->last_index++] = ((float *)data)[0];
     }
     else if (q_identity->q_type == DOUBLE)
     {
@@ -50,7 +50,7 @@ void enqueue(queue_identifier *q_identity, int data)
         {
             q_identity->queue_head = realloc(q_identity->queue_head, ++q_identity->queue_size * sizeof(double));
         }
-        ((double *)q_identity->queue_head)[q_identity->last_index++] = data;
+        ((double *)q_identity->queue_head)[q_identity->last_index++] = ((double *)data)[0];
     }
     else if (q_identity->q_type == CHAR)
     {
@@ -60,7 +60,7 @@ void enqueue(queue_identifier *q_identity, int data)
 
             q_identity->queue_head = realloc(q_identity->queue_head, ++q_identity->queue_size * sizeof(char));
         }
-        ((char *)q_identity->queue_head)[q_identity->last_index++] = data;
+        ((char *)q_identity->queue_head)[q_identity->last_index++] = ((char *)data)[0];
     }
     else
     {
@@ -69,15 +69,14 @@ void enqueue(queue_identifier *q_identity, int data)
         {
             q_identity->queue_head = realloc(q_identity->queue_head, ++q_identity->queue_size * sizeof(int));
         }
-        ((int *)q_identity->queue_head)[q_identity->last_index++] = data;
+        ((int *)q_identity->queue_head)[q_identity->last_index++] = ((int *)data)[0];
     }
 }
-
 void dequeue(queue_identifier *q_identity)
 {
     if (q_identity->q_type == INT)
     {
-        // printf("geldim hanim kusura bakma biraz erken oldu sanirim");
+
         int *del = ((int *)q_identity->queue_head + (--q_identity->last_index - 1));
         q_identity->queue_head = (int *)q_identity->queue_head + 1;
         free((void *)del);

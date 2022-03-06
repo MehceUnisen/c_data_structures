@@ -4,23 +4,41 @@ int main()
 {
     q_id = -1;
     queue_identifier *main_q = init_queue(INT);
+    int a = 10;
+    enqueue(main_q, (void *)(&a));
+    a++;
+    enqueue(main_q, (void *)(&a));
+    a++;
+    enqueue(main_q, (void *)(&a));
 
-    enqueue(main_q, 10);
-    enqueue(main_q, 11);
-    enqueue(main_q, 12);
+    a++;
+    enqueue(main_q, (void *)(&a));
+    a++;
+    enqueue(main_q, (void *)(&a));
 
     print_queue(main_q);
-    enqueue(main_q, 13);
-    enqueue(main_q, 14);
-    dequeue(main_q);
-    dequeue(main_q);
-    enqueue(main_q, 15);
-    dequeue(main_q);
-    dequeue(main_q);
-    dequeue(main_q);
-    enqueue(main_q, 16);
 
     // output
+    // 0th index -> 10
+    // 1th index -> 11
+    // 2th index -> 12
+    // 3th index -> 13
+    // 4th index -> 14
+
+    dequeue(main_q);
+    dequeue(main_q);
+    a++;
+    enqueue(main_q, (void *)(&a));
+    dequeue(main_q);
+    dequeue(main_q);
+    dequeue(main_q);
+    a++;
+    enqueue(main_q, (void *)(&a));
+
+    print_queue(main_q);
+
+    // output
+
     // 0th index -> 15
     // 1th index -> 16
 
