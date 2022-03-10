@@ -10,7 +10,7 @@ leaf *init_tree(int data)
     return root;
 }
 
-void add_node(leaf *root, int data)
+void add_leaf(leaf *root, int data)
 {
 
     while (1)
@@ -46,7 +46,7 @@ void add_node(leaf *root, int data)
     }
 }
 
-leaf *go_to_node(leaf *root, int data)
+leaf *go_to_leaf(leaf *root, int data)
 {
 
     while (root->left || root->right)
