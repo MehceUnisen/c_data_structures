@@ -1,5 +1,9 @@
 #include "hm.h"
 
+// i made the code more complex on purpose
+// in order to have a better comprehension
+// of double pointers
+
 hm *init_hm(int size)
 {
     hm *head = (hm *)malloc(sizeof(hm));

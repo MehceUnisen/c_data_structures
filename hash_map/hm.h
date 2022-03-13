@@ -3,6 +3,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// i made the code more complex on purpose
+// in order to have a better comprehension
+// of double pointers
+
 struct hm_identifier
 {
     int *first_index;

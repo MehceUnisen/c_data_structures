@@ -1,5 +1,9 @@
 #include "hm.h"
 
+// i made the code more complex on purpose
+// in order to have a better comprehension
+// of double pointers
+
 int main()
 {
     hm *main_head = init_hm(20);
