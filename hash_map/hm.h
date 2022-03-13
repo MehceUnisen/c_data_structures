@@ -7,6 +7,8 @@ struct hm_identifier
 {
     int *first_index;
     int size;
+    int **oper_ar;
+    int *non_empty;
 };
 
 typedef struct hm_identifier hm;
