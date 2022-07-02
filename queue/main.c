@@ -5,16 +5,16 @@ int main()
     q_id = -1;
     queue_identifier *main_q = init_queue(INT);
     int a = 10;
-    enqueue(main_q, (void *)(&a));
+    enqueue(main_q, &a);
     a++;
-    enqueue(main_q, (void *)(&a));
+    enqueue(main_q, &a);
     a++;
-    enqueue(main_q, (void *)(&a));
+    enqueue(main_q, &a);
 
     a++;
-    enqueue(main_q, (void *)(&a));
+    enqueue(main_q, &a);
     a++;
-    enqueue(main_q, (void *)(&a));
+    enqueue(main_q, &a);
 
     print_queue(main_q);
 
@@ -28,12 +28,12 @@ int main()
     dequeue(main_q);
     dequeue(main_q);
     a++;
-    enqueue(main_q, (void *)(&a));
+    enqueue(main_q, &a);
     dequeue(main_q);
     dequeue(main_q);
     dequeue(main_q);
     a++;
-    enqueue(main_q, (void *)(&a));
+    enqueue(main_q, &a);
 
     print_queue(main_q);
 
